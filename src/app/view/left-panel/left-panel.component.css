@@ -1,0 +1,139 @@
+.left-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px 0;
+  height: 100vh;
+  /*border-right: 2px solid #F0F0F0;*/
+}
+
+.menu-btn {
+  width: 32px;
+  height: 32px;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background-color: #D1E6F9;
+  border-radius: 6px;
+  cursor: pointer;
+  display: none;
+}
+
+.menu-btn i {
+  font-size: 18px;
+  color: #208BEE;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo a {
+  font-weight: 800;
+  font-size: 20px;
+  color: #006ED3;
+}
+
+.logo img {
+  /*width: 40px;*/
+  height: 60px;
+  object-fit: cover;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.sidebar i {
+  color: #BDBDBD;
+  transition: all 0.3s ease;
+}
+
+.sidebar a {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 14px;
+  color: #BDBDBD;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.item a span::after {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 0;
+  background-color: #369FFF;
+  right: -30px;
+  border-radius: 50%;
+  top: 0;
+  transform: translateY(116%);
+  transition: all 0.3s ease;
+}
+
+.item.active a span::after {
+  height: 8px;
+  width: 8px;
+}
+
+.item.active a,
+.item.active i,
+.down {
+  color: #369FFF;
+}
+
+.item {
+  display: flex;
+  gap: 20px;
+  cursor: pointer;
+}
+
+i {
+  font-size: 24px;
+}
+
+@media screen and (max-width: 1200px) {
+  .left-section {
+    padding: 20px 20px 0 20px;
+  }
+
+  .left-section .logo a,
+  .left-section .sidebar a span,
+  .left-section .pic img,
+  .left-section .down h5,
+  .left-section .down a{
+    display: none;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .left-section {
+    position: fixed;
+    height: 60vh;
+    background-color: white;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    top: -60vh;
+  }
+
+  .left-section .logo {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .left-section .logo .menu-btn {
+    display: flex;
+  }
+
+  .left-section.open {
+    top: 0;
+  }
+
+
+}

@@ -1,0 +1,39 @@
+<div class="container-wrapper">
+  <aside class="left-section" [ngClass]="{'open': sidebarService.isSidebarOpen}">
+    <div class="logo">
+      <button class="menu-btn" id="menu-close" (click)="toggleSidebar()">
+        <i class="bi bi-box-arrow-left"></i>
+      </button>
+      <a href="/overview"><img src="assets/img/logo/light_logo.ico"></a>
+    </div>
+
+    <div class="sidebar">
+      <div class="item" [class.active]="activeItem === 0" (click)="setActiveItem(0)">
+        <a routerLink="/overview"><i class="bi bi-house"></i><span>Overview</span></a>
+      </div>
+      <div class="item" [class.active]="activeItem === 1" (click)="setActiveItem(1)">
+        <a routerLink="/games"><i class="bi bi-dice-3"></i><span>Games</span></a>
+      </div>
+      <div class="item" [class.active]="activeItem === 2" (click)="setActiveItem(2)">
+        <a routerLink="#"><i class="bi bi-shop"></i><span>Shops</span></a>
+      </div>
+      <div class="item" [class.active]="activeItem === 3" (click)="setActiveItem(3)">
+        <a routerLink="#"><i class="bi bi-bookmarks"></i><span>Categories</span></a>
+      </div>
+      <div class="item" [class.active]="activeItem === 4" (click)="setActiveItem(4)">
+        <a routerLink="#"><i class="bi bi-newspaper"></i><span>News</span></a>
+      </div>
+      <div class="item" [class.active]="activeItem === 5" (click)="setActiveItem(5)">
+        <a routerLink="#"><i class="bi bi-award"></i><span>Game of the day</span></a>
+      </div>
+      <div class="item" [class.active]="activeItem === 6" (click)="setActiveItem(6)">
+        <a routerLink="#"><i class="bi bi-collection"></i><span>Sales</span></a>
+      </div>
+    </div>
+
+    <div class="down">
+      <h5>To contact </h5>
+      <a>devdubrovsky&#64;gmail.com</a>
+    </div>
+  </aside>
+</div>

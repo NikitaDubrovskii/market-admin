@@ -1,1 +1,28 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+:root {
+
+}
+
+a {
+  text-decoration: none !important;
+}
+
+ul,
+ol,
+li {
+  list-style: none !important;
+}
+
+img {
+  vertical-align: top !important;
+}
+
+html,
+body {
+  line-height: 1 !important;
+  text-rendering: optimizeLegibility !important;
+  font-family: 'Manrope', serif !important;
+}
