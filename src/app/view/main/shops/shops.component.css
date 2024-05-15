@@ -1,4 +1,4 @@
-.games {
+.shops {
   height: 100vh;
   padding: 40px 40px 0 40px;
   border-right: 2px solid #F0F0F0;
@@ -36,7 +36,7 @@
   font-weight: 400;
 }
 
-.games_header {
+.shops_header {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -47,7 +47,7 @@
   font-size: 30px;
 }
 
-.games_container {
+.shops_container {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -90,28 +90,24 @@
 }
 
 .mat-column-number {
-  width: 2%;
+  width: 1%;
   text-align: center;
 }
 
 .mat-column-name {
-  width: 43%;
+  width: 25%;
 }
 
-.mat-column-price {
-  width: 15%;
+.mat-column-address {
+  width: 30%;
 }
 
-.mat-column-date {
-  width: 23%;
+.mat-column-phone {
+  width: 30%;
 }
 
-.mat-column-rating {
-  width: 15%;
-}
-
-.mat-column-gameId {
-  width: 2%;
+.mat-column-shopId {
+  width: 1%;
 }
 
 tr.mat-mdc-row:hover {
@@ -120,13 +116,13 @@ tr.mat-mdc-row:hover {
 }
 
 @media screen and (max-width: 1200px) {
-  .games {
+  .shops {
     padding: 20px 20px 0 20px;
   }
 }
 
 @media screen and (max-width: 992px) {
-  .games {
+  .shops {
     border-left: none;
   }
 
@@ -138,7 +134,7 @@ tr.mat-mdc-row:hover {
     font-size: 16px;
   }
 
-  .games_header {
+  .shops_header {
     margin-bottom: 10px;
   }
 
@@ -146,37 +142,25 @@ tr.mat-mdc-row:hover {
     font-size: 20px;
   }
 
-  .mat-column-date {
-    display: none;
-  }
-
-  .mat-column-rating {
+  .mat-column-phone {
     display: none;
   }
 }
 
 @media screen and (max-width: 768px){
-  .games {
+  .shops {
     border-right: none;
     height: auto;
     /*overflow-y: visible;*/
   }
 
-  .mat-column-date {
-    display: table-cell;
-  }
-
-  .mat-column-rating {
+  .mat-column-phone {
     display: table-cell;
   }
 }
 
 @media screen and (max-width: 500px){
-  .mat-column-date {
-    display: none;
-  }
-
-  .mat-column-rating {
+  .mat-column-phone {
     display: none;
   }
 }

@@ -20,12 +20,14 @@
   padding: 40px 40px 0 40px;
   border-right: 2px solid #F0F0F0;
   border-left: 2px solid #F0F0F0;
+  overflow-y: auto;
 }
 
 .overview header {
   display: flex;
   align-items: center;
   gap: 15px;
+  margin-bottom: 20px;
 }
 
 .overview header h5 {
@@ -38,7 +40,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .separator .info {
@@ -82,7 +84,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
-  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .analytics .item {
@@ -105,6 +107,7 @@
   color: #fff;
   font-size: 20px;
   font-weight: bold;
+  margin-bottom: 10px;
 }
 
 .item_progress .info p {
@@ -203,7 +206,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 10px;
-  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .planning .item {
@@ -269,6 +272,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 .details h5 {
   font-size: 12px;
   font-weight: 600;
+  margin-bottom: 5px;
 }
 
 .details p {
@@ -287,6 +291,10 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 @media screen and (max-width: 992px) {
+  .overview {
+    border-left: none;
+  }
+
   .menu-btn {
     display: flex;
   }
@@ -318,5 +326,13 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
   .overview .planning .item {
     padding: 8px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .overview {
+    height: auto;
+    border-right: none;
+    /*overflow-y: visible;*/
   }
 }

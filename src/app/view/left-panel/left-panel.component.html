@@ -4,7 +4,7 @@
       <button class="menu-btn" id="menu-close" (click)="toggleSidebar()">
         <i class="bi bi-box-arrow-left"></i>
       </button>
-      <a href="/overview"><img src="assets/img/logo/light_logo.ico"></a>
+      <a routerLink="/overview" (click)="setActiveItem(0)"><img src="assets/img/logo/light_logo.ico" alt="logo"></a>
     </div>
 
     <div class="sidebar">
@@ -15,13 +15,13 @@
         <a routerLink="/games"><i class="bi bi-dice-3"></i><span>Games</span></a>
       </div>
       <div class="item" [class.active]="activeItem === 2" (click)="setActiveItem(2)">
-        <a routerLink="#"><i class="bi bi-shop"></i><span>Shops</span></a>
+        <a routerLink="/shops"><i class="bi bi-shop"></i><span>Shops</span></a>
       </div>
       <div class="item" [class.active]="activeItem === 3" (click)="setActiveItem(3)">
-        <a routerLink="#"><i class="bi bi-bookmarks"></i><span>Categories</span></a>
+        <a routerLink="/categories"><i class="bi bi-bookmarks"></i><span>Categories</span></a>
       </div>
       <div class="item" [class.active]="activeItem === 4" (click)="setActiveItem(4)">
-        <a routerLink="#"><i class="bi bi-newspaper"></i><span>News</span></a>
+        <a routerLink="/news"><i class="bi bi-newspaper"></i><span>News</span></a>
       </div>
       <div class="item" [class.active]="activeItem === 5" (click)="setActiveItem(5)">
         <a routerLink="#"><i class="bi bi-award"></i><span>Game of the day</span></a>
@@ -34,6 +34,7 @@
     <div class="down">
       <h5>To contact </h5>
       <a>devdubrovsky&#64;gmail.com</a>
+
     </div>
   </aside>
 </div>

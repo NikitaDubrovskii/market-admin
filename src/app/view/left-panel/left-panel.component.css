@@ -115,11 +115,12 @@ i {
 @media screen and (max-width: 992px) {
   .left-section {
     position: fixed;
-    height: 60vh;
+    height: 80vh;
     background-color: white;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
-    top: -60vh;
+    top: -100vh;
+    z-index: 100;
   }
 
   .left-section .logo {
