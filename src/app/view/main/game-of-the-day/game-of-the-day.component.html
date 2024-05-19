@@ -1,0 +1,160 @@
+<div class="game-of-the-day">
+  <div class="hello">
+    <button class="menu-btn" id="menu-open" (click)="toggleSidebar()">
+      <i class="bi bi-list"></i>
+    </button>
+    <h5 class="m-0">Hello <b>NIK</b>, welcome back!</h5>
+  </div>
+
+  <div class="game-of-the-day_header">
+    <h3 class="header_title m-0">Game Of The Day</h3>
+  </div>
+
+  <div class="game-of-the-day_info">
+    <div class="info m-0" *ngIf="!gameOfTheDayNow">No game of the day</div>
+
+    <div class="info m-0" *ngIf="gameOfTheDayNow">Currently game of the day:
+      <a class="info_btn" (click)="selectGameOfTheDay(gameOfTheDayNow)">{{ gameOfTheDayNow!.name }}</a>
+    </div>
+  </div>
+
+  <div class="game-of-the-day_search position-relative">
+    <label for="gamesDataList" class="form-label">Games</label>
+
+    <input class="form-control" list="datalistOptions" id="gamesDataList"
+           (input)="onGameSelected($event)" [(ngModel)]="gameSearch" placeholder="Choose the game...">
+
+    <datalist id="datalistOptions">
+      <option *ngFor="let game of games" value="{{game.name}}">
+    </datalist>
+
+    <button *ngIf="gameSearch" type="button" class="btn-close position-absolute top-50 end-0 me-2"
+            aria-label="Clear" (click)="clearGameSearch()"></button>
+  </div>
+
+  <div class="game-of-the-day_content">
+    <div *ngIf="selectedGame" class="edit-panel">
+
+      <div class="row g-1 align-items-center">
+        <div class="content_info" *ngIf="selectedGame.gameOfTheDay">
+          <h4 class="text-danger">The game HAS ALREADY BEEN SELECTED as the Game of The Day</h4>
+        </div>
+
+        <div class="col-xl-8 col-md-12">
+          <div class="row g-2 ">
+            <div class="col-lg-9 col-9 content_title">
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">title</span>
+                <input type="text" class="form-control" value="{{selectedGame.name}}"
+                       aria-label="Title" aria-describedby="basic-addon1" disabled>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-3 col-md-6 content_id">
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon2">id</span>
+                <input type="text" class="form-control" value="{{selectedGame.gameId}}"
+                       aria-label="Id" aria-describedby="basic-addon2" disabled>
+              </div>
+            </div>
+
+            <div class="col-lg-12 col-12 content_description">
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon3">description</span>
+                <input type="text" class="form-control" value="{{selectedGame.description}}"
+                       aria-label="Description" aria-describedby="basic-addon3" disabled>
+              </div>
+            </div>
+
+            <div class="col-lg-6 col-6 content_quantity">
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon4">quantity</span>
+                <input type="text" class="form-control" value="{{selectedGame.quantity}}"
+                       aria-label="Title" aria-describedby="basic-addon4" disabled>
+              </div>
+            </div>
+
+            <div class="col-lg-6 col-6 col-md-6 content_rating">
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon5">rating</span>
+                <input type="text" class="form-control" value="{{selectedGame.rating}}"
+                       aria-label="Id" aria-describedby="basic-addon5" disabled>
+              </div>
+            </div>
+
+            <div class="col-lg-6 col-6 content_date">
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon6">date</span>
+                <input type="text" class="form-control" value="{{selectedGame.dateAdded}}"
+                       aria-label="Title" aria-describedby="basic-addon6" disabled>
+              </div>
+            </div>
+
+            <div class="col-lg-6 col-6 content_brand">
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon7">brand</span>
+                <input type="text" class="form-control" value="{{selectedGame.brand}}"
+                       aria-label="Id" aria-describedby="basic-addon7" disabled>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xl-4 content_img">
+          <img src="{{dataURI()}}" class="card-img-top" alt="game image">
+        </div>
+      </div>
+
+      <div class="row g-2">
+        <div class="col-md-4 content_discount">
+          <label for="basic-addon8" class="form-label">Indicate the discount amount</label>
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon8">discount</span>
+            <input type="number" min="0" max="100" class="form-control bg-info-subtle border-info-subtle"
+                   [(ngModel)]="discount" (ngModelChange)="calculateDiscountedPrice()"
+                   aria-label="Discount" aria-describedby="basic-addon8">
+            <span class="input-group-text">%</span>
+          </div>
+        </div>
+
+        <div class="col-md-4 content_price">
+          <label for="basic-addon9" class="form-label">Price without discount</label>
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon9">$</span>
+            <input type="text" class="form-control bg-danger-subtle border-danger-subtle"
+                   value="{{selectedGame.price}}"
+                   aria-label="Price without discount" aria-describedby="basic-addon9" disabled>
+          </div>
+        </div>
+
+        <div class="col-md-4 content_price-discount">
+          <label for="basic-addon10" class="form-label">Price with discount</label>
+          <div class="input-group mb-3 ">
+            <span class="input-group-text" id="basic-addon10">$</span>
+            <input type="text" class="form-control bg-success-subtle border-success-subtle"
+                   [(ngModel)]="discountedPrice"
+                   aria-label="Price with discount" aria-describedby="basic-addon10" disabled>
+          </div>
+        </div>
+      </div>
+
+      <div class="apply-group">
+        <div class="switch">
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked"
+                   [(ngModel)]="isSwitchOn" (change)="updateButtonState()">
+            <label class="form-check-label" for="flexSwitchCheckChecked">Make the game the Game Of The Day</label>
+          </div>
+        </div>
+
+        <div class="apply">
+          <button class="btn btn-primary" [disabled]="!isButtonEnabled"
+                  (click)="setGameOfTheDay()">Apply Discount
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>

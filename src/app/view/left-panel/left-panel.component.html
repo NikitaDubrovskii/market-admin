@@ -24,10 +24,13 @@
         <a routerLink="/news"><i class="bi bi-newspaper"></i><span>News</span></a>
       </div>
       <div class="item" [class.active]="activeItem === 5" (click)="setActiveItem(5)">
-        <a routerLink="#"><i class="bi bi-award"></i><span>Game of the day</span></a>
+        <a routerLink="/game-of-the-day"><i class="bi bi-award"></i><span>Game of the day</span></a>
       </div>
       <div class="item" [class.active]="activeItem === 6" (click)="setActiveItem(6)">
-        <a routerLink="#"><i class="bi bi-collection"></i><span>Sales</span></a>
+        <a routerLink="/sales"><i class="bi bi-collection"></i><span>Sales</span></a>
+      </div>
+      <div class="item" [class.active]="activeItem === 7" (click)="setActiveItem(7)">
+        <a routerLink="/carousel"><i class="bi bi-card-image"></i><span>Carousel</span></a>
       </div>
     </div>
 

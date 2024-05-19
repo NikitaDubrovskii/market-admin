@@ -1,0 +1,95 @@
+.sales {
+  height: 100vh;
+  padding: 40px 40px 0 40px;
+  border-right: 2px solid #F0F0F0;
+  border-left: 2px solid #F0F0F0;
+  overflow-y: auto;
+}
+
+.menu-btn {
+  width: 32px;
+  height: 32px;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background-color: #D1E6F9;
+  border-radius: 6px;
+  cursor: pointer;
+  display: none;
+}
+
+.menu-btn i {
+  font-size: 18px;
+  color: #208BEE;
+}
+
+.hello {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.hello h5 {
+  font-size: 18px;
+  color: #369FFF;
+  font-weight: 400;
+}
+
+.sales_header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.header_title {
+  font-size: 30px;
+}
+
+.sales_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.container_search {
+  width: 80%;
+}
+
+.container_add .btn {
+  height: 31px;
+  width: 31px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container_add .btn:hover {
+  border-color: #000;
+}
+
+.container_add i {
+  font-size: 22px;
+}
+
+.mat-table, mat-paginator {
+  background: none;
+}
+
+.mat-mdc-row:nth-child(even) {
+  background-color: #ffffff;
+}
+
+.mat-mdc-row:nth-child(odd) {
+  background-color: #fafafa;
+}
+
+tr.mat-mdc-row:hover {
+  background-color: #efefef;
+  cursor: pointer;
+}
+
+

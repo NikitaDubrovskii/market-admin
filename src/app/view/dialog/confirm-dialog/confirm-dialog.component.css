@@ -1,0 +1,42 @@
+.modal-confirm {
+  display: block;
+  box-sizing: border-box;
+}
+
+/* Стили для заголовка диалогового окна */
+h1 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  border-bottom: 1px solid lightgray;
+}
+
+/* Стили для содержимого диалогового окна */
+.modal-confirm_content {
+  text-align: center;
+  font-size: 1rem;
+}
+
+.modal-confirm_btn {
+  justify-content: space-around;
+}
+
+/* Стили для кнопок в диалоговом окне */
+button {
+  margin: 0 10px;
+  padding: 8px 16px;
+  font-size: 1rem;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  outline: none;
+}
+
+/* Стили для кнопки "Да" */
+button.yes-button {
+  color: white;
+}
+
+/* Стили для кнопки "Нет" */
+button.no-button {
+  color: black;
+}

@@ -16,10 +16,9 @@ export class Game {
   brand?: string;
   discount?: number;
   priceWithDiscount?: number;
+  gameOfTheDay?: boolean;
 
-  constructor(gameId: number, name: string, description: string, price: number, currency: string,
-              quantity: number, categories: Category[], images: Image[], imagePreview: Image,
-              rating: number, dateAdded: Date, brand: string, discount: number, priceWithDiscount: number) {
+  constructor(gameId: number, name: string, description: string, price: number, currency: string, quantity: number, categories: Category[], images: Image[], imagePreview: Image, rating: number, dateAdded: Date, brand: string, discount: number, priceWithDiscount: number, gameOfTheDay: boolean) {
     this.gameId = gameId;
     this.name = name;
     this.description = description;
@@ -34,5 +33,6 @@ export class Game {
     this.brand = brand;
     this.discount = discount;
     this.priceWithDiscount = priceWithDiscount;
+    this.gameOfTheDay = gameOfTheDay;
   }
 }

@@ -9,6 +9,6 @@ import {LayoutRoutes} from "./layout.routes";
   imports: [
     CommonModule,
     RouterModule.forChild(LayoutRoutes),
-  ]
+  ],
 })
 export class LayoutModule { }

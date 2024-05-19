@@ -1,0 +1,189 @@
+.game-of-the-day {
+  height: 100vh;
+  padding: 40px 40px 20px 40px;
+  border-right: 2px solid #F0F0F0;
+  border-left: 2px solid #F0F0F0;
+  overflow-y: auto;
+}
+
+.menu-btn {
+  width: 32px;
+  height: 32px;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background-color: #D1E6F9;
+  border-radius: 6px;
+  cursor: pointer;
+  display: none;
+}
+
+.menu-btn i {
+  font-size: 18px;
+  color: #208BEE;
+}
+
+.hello {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.hello h5 {
+  font-size: 18px;
+  color: #369FFF;
+  font-weight: 400;
+}
+
+.game-of-the-day_header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.header_title {
+  font-size: 30px;
+}
+
+.game-of-the-day_info {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  margin-bottom: 20px;
+}
+
+.info_btn {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.game-of-the-day_search {
+  margin-bottom: 50px;
+}
+
+.content_info {
+
+}
+
+.content_img {
+  display: flex;
+  height: 200px;
+  justify-content: center;
+  align-items: center;
+}
+
+.content_img img {
+  height: 100%;
+  width: auto;
+}
+
+.apply-group {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.switch label {
+  line-height: 1.3rem;
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1500px) {
+  .content_title {
+    order: 1;
+    width: 100%;
+  }
+
+  .content_description {
+    order: 2;
+  }
+
+  .content_quantity {
+    order: 3;
+  }
+
+  .content_rating {
+    order: 4;
+  }
+
+  .content_date {
+    order: 5;
+  }
+
+  .content_id {
+    order: 6;
+    width: 50%;
+  }
+
+  .content_brand {
+    order: 7;
+    width: 100%;
+  }
+
+  .content_discount {
+    width: 40%;
+  }
+
+  .content_price {
+    width: 30%;
+  }
+
+  .content_price-discount {
+    width: 30%;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .content_img {
+    display: none;
+  }
+
+  .content_discount {
+    width: 100%;
+  }
+
+  .content_price {
+    width: 50%;
+  }
+
+  .content_price-discount {
+    width: 50%;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  .content_title {
+    order: 1;
+    width: 100%;
+  }
+
+  .content_description {
+    order: 2;
+  }
+
+  .content_id {
+    order: 3;
+  }
+
+  .content_rating {
+    order: 4;
+  }
+
+  .content_date {
+    order: 5;
+  }
+
+  .content_quantity {
+    order: 6;
+  }
+
+  .content_brand {
+    order: 7;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+
+}

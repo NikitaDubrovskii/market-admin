@@ -26,6 +26,10 @@ import {MatSortModule} from "@angular/material/sort";
 import { ShopsComponent } from './view/main/shops/shops.component';
 import { CategoriesComponent } from './view/main/categories/categories.component';
 import { NewsComponent } from './view/main/news/news.component';
+import { SalesComponent } from './view/main/sales/sales.component';
+import { CarouselComponent } from './view/main/carousel/carousel.component';
+import { GameOfTheDayComponent } from './view/main/game-of-the-day/game-of-the-day.component';
+import { ConfirmDialogComponent } from './view/dialog/confirm-dialog/confirm-dialog.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +39,11 @@ import { NewsComponent } from './view/main/news/news.component';
     GamesComponent,
     ShopsComponent,
     CategoriesComponent,
-    NewsComponent
+    NewsComponent,
+    SalesComponent,
+    CarouselComponent,
+    GameOfTheDayComponent,
+    ConfirmDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -76,6 +84,7 @@ import { NewsComponent } from './view/main/news/news.component';
     },
     provideAnimationsAsync(),
   ],
+
   bootstrap: [AppComponent],
   exports: [AppComponent]
 })
