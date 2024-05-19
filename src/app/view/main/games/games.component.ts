@@ -5,6 +5,7 @@ import {Game} from "../../../model/game";
 import {MatSort} from "@angular/material/sort";
 import {GameService} from "../../../data/impl/game.service";
 import {SidebarService} from "../../../service/sidebar.service";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-games',
@@ -20,6 +21,7 @@ export class GamesComponent implements OnInit, AfterViewInit {
   @ViewChild(MatSort) sort: MatSort = MatSort.prototype;
 
   constructor(private gameService: GameService,
+              private route: ActivatedRoute,
               private sidebarService: SidebarService) {
   }
 
@@ -33,9 +35,10 @@ export class GamesComponent implements OnInit, AfterViewInit {
   }
 
   private fillTable() {
-    this.gameService.getAll().subscribe(res => {
+    /*this.gameService.getAll().subscribe(res => {
       this.dataSource.data = res;
-    })
+    })*/
+    this.dataSource.data = this.route.snapshot.data['data'];
   }
 
   // фильтр поиска по некоторым критериям

@@ -5,6 +5,7 @@ import {MatSort} from "@angular/material/sort";
 import {SidebarService} from "../../../service/sidebar.service";
 import {NewsService} from "../../../data/impl/news.service";
 import {News} from "../../../model/news";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-news',
@@ -21,6 +22,7 @@ export class NewsComponent implements OnInit, AfterViewInit {
 
 
   constructor(private newsService: NewsService,
+              private route: ActivatedRoute,
               private sidebarService: SidebarService) {
   }
 
@@ -34,9 +36,10 @@ export class NewsComponent implements OnInit, AfterViewInit {
   }
 
   private fillTable() {
-    this.newsService.getAll().subscribe(res => {
+    /*this.newsService.getAll().subscribe(res => {
       this.dataSource.data = res;
-    })
+    })*/
+    this.dataSource.data = this.route.snapshot.data['data'];
   }
 
   // фильтр поиска по некоторым критериям

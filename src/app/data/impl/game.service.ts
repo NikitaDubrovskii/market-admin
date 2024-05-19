@@ -26,8 +26,8 @@ export class GameService extends CommonService<any> implements GameDao {
     return this.http.put<Game>(`${this.baseUrl}/addGameOfTheDay/${gameId}`, {}, { params });
   }
 
-  getSale(): Observable<Game[]> {
-    return this.http.get<Game[]>(this.baseUrl + '/saleGame');
+  getAllSale(): Observable<Game[]> {
+    return this.http.get<Game[]>(this.baseUrl + '/allSaleGame');
   }
 
 }

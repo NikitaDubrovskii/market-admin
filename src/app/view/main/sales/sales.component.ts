@@ -5,6 +5,7 @@ import {MatTableDataSource} from "@angular/material/table";
 import {Game} from "../../../model/game";
 import {MatPaginator} from "@angular/material/paginator";
 import {MatSort} from "@angular/material/sort";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-sales',
@@ -20,6 +21,7 @@ export class SalesComponent implements OnInit, AfterViewInit {
   @ViewChild(MatSort) sort: MatSort = MatSort.prototype;
 
   constructor(private sidebarService: SidebarService,
+              private route: ActivatedRoute,
               private gameService: GameService) {
   }
 
@@ -53,8 +55,9 @@ export class SalesComponent implements OnInit, AfterViewInit {
   }
 
   private fillTable() {
-    this.gameService.getSale().subscribe(res => {
+    /*this.gameService.getAllSale().subscribe(res => {
       this.dataSource.data = res;
-    })
+    })*/
+    this.dataSource.data = this.route.snapshot.data['data'];
   }
 }

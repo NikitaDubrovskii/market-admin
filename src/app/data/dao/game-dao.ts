@@ -10,6 +10,6 @@ export interface GameDao {
 
   getNew(): Observable<Game[]>;*/
 
-  getSale(): Observable<any>;
+  getAllSale(): Observable<any>;
 
 }

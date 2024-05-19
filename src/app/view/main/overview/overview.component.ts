@@ -5,6 +5,7 @@ import {GameService} from "../../../data/impl/game.service";
 import {CategoryService} from "../../../data/impl/category.service";
 import {NewsService} from "../../../data/impl/news.service";
 import {ShopService} from "../../../data/impl/shop.service";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-overview',
@@ -13,12 +14,15 @@ import {ShopService} from "../../../data/impl/shop.service";
 })
 export class OverviewComponent implements OnInit {
 
-  games: number = 0;
+  /*games: number = 0;
   news: number = 0;
   shops: number = 0;
-  categories: number = 0;
+  categories: number = 0;*/
+
+  data: any;
 
   constructor(private sidebarService: SidebarService,
+              private route: ActivatedRoute,
               private itemSelectionService: ItemSelectionService,
               private gameService: GameService,
               private categoryService: CategoryService,
@@ -37,7 +41,7 @@ export class OverviewComponent implements OnInit {
   }
 
   private getCount() {
-    this.gameService.getCount().subscribe(res => {
+    /*this.gameService.getCount().subscribe(res => {
       this.games = res;
     });
     this.shopService.getCount().subscribe(res => {
@@ -48,6 +52,8 @@ export class OverviewComponent implements OnInit {
     });
     this.newsService.getCount().subscribe(res => {
       this.news = res;
-    });
+    });*/
+
+    this.data = this.route.snapshot.data['data'];
   }
 }

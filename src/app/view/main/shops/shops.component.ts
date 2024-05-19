@@ -5,6 +5,7 @@ import {MatSort} from "@angular/material/sort";
 import {ShopService} from "../../../data/impl/shop.service";
 import {SidebarService} from "../../../service/sidebar.service";
 import {Shop} from "../../../model/shop";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-shops',
@@ -21,6 +22,7 @@ export class ShopsComponent implements OnInit, AfterViewInit{
 
 
   constructor(private shopService: ShopService,
+              private route: ActivatedRoute,
               private sidebarService: SidebarService) {
   }
 
@@ -34,9 +36,10 @@ export class ShopsComponent implements OnInit, AfterViewInit{
   }
 
   private fillTable() {
-    this.shopService.getAll().subscribe(res => {
+    /*this.shopService.getAll().subscribe(res => {
       this.dataSource.data = res;
-    })
+    })*/
+    this.dataSource.data = this.route.snapshot.data['data'];
   }
 
   // фильтр поиска по некоторым критериям

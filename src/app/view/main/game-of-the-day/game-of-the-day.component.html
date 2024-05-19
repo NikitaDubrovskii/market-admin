@@ -19,7 +19,9 @@
   </div>
 
   <div class="game-of-the-day_search position-relative">
-    <label for="gamesDataList" class="form-label">Games</label>
+    <label for="gamesDataList" class="form-label">You need to choose a game that will become the Game Of The Day.
+      Then, in the “discount” field, set the discount amount.
+      <strong>ATTENTION</strong>: a game with a discount cannot be the Game Of The Day at the same time</label>
 
     <input class="form-control" list="datalistOptions" id="gamesDataList"
            (input)="onGameSelected($event)" [(ngModel)]="gameSearch" placeholder="Choose the game...">
@@ -28,7 +30,7 @@
       <option *ngFor="let game of games" value="{{game.name}}">
     </datalist>
 
-    <button *ngIf="gameSearch" type="button" class="btn-close position-absolute top-50 end-0 me-2"
+    <button *ngIf="gameSearch" type="button" class="btn-close position-absolute end-0 me-2"
             aria-label="Clear" (click)="clearGameSearch()"></button>
   </div>
 

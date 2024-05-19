@@ -5,6 +5,7 @@ import {MatSort} from "@angular/material/sort";
 import {SidebarService} from "../../../service/sidebar.service";
 import {CategoryService} from "../../../data/impl/category.service";
 import {Category} from "../../../model/category";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-categories',
@@ -21,6 +22,7 @@ export class CategoriesComponent implements OnInit, AfterViewInit {
 
 
   constructor(private categoryService: CategoryService,
+              private route: ActivatedRoute,
               private sidebarService: SidebarService) {
   }
 
@@ -34,9 +36,10 @@ export class CategoriesComponent implements OnInit, AfterViewInit {
   }
 
   private fillTable() {
-    this.categoryService.getAll().subscribe(res => {
+    /*this.categoryService.getAll().subscribe(res => {
       this.dataSource.data = res;
-    })
+    })*/
+    this.dataSource.data = this.route.snapshot.data['data'];
   }
 
   // фильтр поиска по некоторым критериям

@@ -30,6 +30,7 @@ import { SalesComponent } from './view/main/sales/sales.component';
 import { CarouselComponent } from './view/main/carousel/carousel.component';
 import { GameOfTheDayComponent } from './view/main/game-of-the-day/game-of-the-day.component';
 import { ConfirmDialogComponent } from './view/dialog/confirm-dialog/confirm-dialog.component';
+import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 
 @NgModule({
   declarations: [
@@ -60,6 +61,7 @@ import { ConfirmDialogComponent } from './view/dialog/confirm-dialog/confirm-dia
     MatTableModule,
     MatSortModule,
     MatPaginatorModule,
+    MatProgressSpinnerModule
   ],
   providers: [
     {

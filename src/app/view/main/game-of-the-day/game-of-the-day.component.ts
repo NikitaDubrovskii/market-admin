@@ -5,6 +5,7 @@ import {Game} from "../../../model/game";
 import {MatDialog} from "@angular/material/dialog";
 import {ConfirmDialogComponent} from "../../dialog/confirm-dialog/confirm-dialog.component";
 import {forkJoin, map} from "rxjs";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-game-of-the-day',
@@ -26,6 +27,7 @@ export class GameOfTheDayComponent implements OnInit {
   isButtonEnabled: boolean = false;
 
   constructor(private gameService: GameService,
+              private route: ActivatedRoute,
               private sidebarService: SidebarService,
               public dialog: MatDialog) {
   }
@@ -102,6 +104,8 @@ export class GameOfTheDayComponent implements OnInit {
               this.fillGames();
               this.findGameOfTheDay();
               this.selectedGame = res;
+              this.isSwitchOn = false;
+              this.updateButtonState();
             });
           }
         } else {
@@ -123,9 +127,9 @@ export class GameOfTheDayComponent implements OnInit {
 
     forkJoin({
       allGames: this.gameService.getAll(),
-      saleGames: this.gameService.getSale()
+      saleGames: this.gameService.getAllSale()
     }).pipe(
-      map(({ allGames, saleGames }) => {
+      map(({allGames, saleGames}) => {
         return allGames.filter(game =>
           !saleGames.some(saleGame => saleGame.gameId === game.gameId)
         );
@@ -136,8 +140,9 @@ export class GameOfTheDayComponent implements OnInit {
   }
 
   private findGameOfTheDay() {
-    this.gameService.getGameOfTheDay().subscribe(res => {
+    /*this.gameService.getGameOfTheDay().subscribe(res => {
       this.gameOfTheDayNow = res;
-    })
+    })*/
+    this.gameOfTheDayNow = this.route.snapshot.data['data'];
   }
 }
